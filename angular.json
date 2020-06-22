@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "irontec-project": {
+    "github-issues-visualizer": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/irontec-project",
+            "outputPath": "dist/github-issues-visualizer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "irontec-project:build"
+            "browserTarget": "github-issues-visualizer:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "irontec-project:build:production"
+              "browserTarget": "github-issues-visualizer:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "irontec-project:build"
+            "browserTarget": "github-issues-visualizer:build"
           }
         },
         "test": {
@@ -116,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "irontec-project:serve"
+            "devServerTarget": "github-issues-visualizer:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "irontec-project:serve:production"
+              "devServerTarget": "github-issues-visualizer:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "irontec-project"
+  "defaultProject": "github-issues-visualizer"
 }
