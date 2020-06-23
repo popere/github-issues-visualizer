@@ -6,19 +6,33 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import {HttpClientModule} from '@angular/common/http';
+import {InputRepoModule} from './input-repo/input-repo.module';
+import {EffectsModule} from '@ngrx/effects';
+import {CommonModule} from '@angular/common';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from 'src/environments/environment';
+import {InfoRepoModule} from './info-repo/info-repo.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    })
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({
+      name: 'GitHub Issues Visualizer',
+      maxAge: 25,
+      logOnly: environment.production
+    }),
+    HttpClientModule,
+    InputRepoModule,
+    InfoRepoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,9 @@
+<div *ngIf="infoRepo" class="github-project-info">
+  <h3> GITHUB REPOSITORY INFO</h3>
+  <ul>
+    <li> Created at: <b>{{infoRepo.created_at | date:'longDate'}}</b></li>
+    <li> Language: <b>{{infoRepo.language}}</b></li>
+    <li> Has issues: <b>{{infoRepo.has_issues}}</b></li>
+    <li *ngIf="infoRepo.has_issues"> Number of issues: <b>{{infoRepo.open_issues}}</b></li>
+  </ul>
+</div>

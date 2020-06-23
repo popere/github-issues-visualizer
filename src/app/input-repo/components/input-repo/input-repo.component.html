@@ -1,0 +1,18 @@
+<form [formGroup]="form" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>GitHub project URL</mat-label>
+    <input formControlName="githubUrl" type="url" matInput placeholder="https://github.com/exampleUser/exampleProject" required>
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <p
+    *ngIf="(form.controls.githubUrl.dirty || form.controls.githubUrl.touched) && form.controls.githubUrl.invalid"
+    class="errorMessage">Please enter a correct GitHub repository , like "https://github.com/angular/angular"</p>
+</form>
+
+<div *ngIf="inputRepo" class="github-project-info">
+  <h3> GITHUB REPOSITORY SEARCHED</h3>
+  <ul>
+    <li> Repository name: <b>{{inputRepo.repositoryName}}</b></li>
+    <li> Username: <b>{{inputRepo.username}}</b></li>
+  </ul>
+</div>
