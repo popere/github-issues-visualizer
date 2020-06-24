@@ -1,4 +1,5 @@
 export interface InfoRepo {
+  html_url: string;
   language: string;
   has_issues: boolean;
   name: string;

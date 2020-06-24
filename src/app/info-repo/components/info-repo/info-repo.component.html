@@ -1,9 +1,20 @@
-<div *ngIf="infoRepo" class="github-project-info">
-  <h3> GITHUB REPOSITORY INFO</h3>
-  <ul>
-    <li> Created at: <b>{{infoRepo.created_at | date:'longDate'}}</b></li>
-    <li> Language: <b>{{infoRepo.language}}</b></li>
-    <li> Has issues: <b>{{infoRepo.has_issues}}</b></li>
-    <li *ngIf="infoRepo.has_issues"> Number of issues: <b>{{infoRepo.open_issues}}</b></li>
-  </ul>
+<div *ngIf="infoRepo">
+  <h3 class="info-title"> GITHUB REPOSITORY INFO</h3>
+  <mat-card class="card">
+    <mat-card-header>
+      <img mat-card-avatar src="/assets/github.png">
+      <mat-card-title>{{infoRepo.owner.login}}/{{infoRepo.name}}</mat-card-title>
+      <mat-card-subtitle>{{infoRepo.created_at | date:'longDate'}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-chip color="primary">{{infoRepo.language}}</mat-chip>
+      <ul>
+        <li *ngIf="!infoRepo.has_issues"> <b>This GitHub repository has no Issues!</b></li>
+        <li *ngIf="infoRepo.has_issues"> Number of issues: <b>{{infoRepo.open_issues}}</b></li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <a class="link-github" target="_blank" rel="noopener noreferrer" [href]="infoRepo.html_url">GITHUB LINK</a>
+    </mat-card-actions>
+  </mat-card>
 </div>

@@ -1,4 +1,5 @@
 export interface InfoRepo {
+  html_url: string;
   language: string;
   has_issues: boolean;
   name: string;
@@ -15,7 +16,13 @@ export interface InputRepo {
   repositoryName: string;
 }
 
-export interface StoreGithub {
-  inputRepo: InputRepo;
-  repoInfo: InfoRepo;
+export interface Issue {
+  html_url: string;
+  title: string;
+  user: {
+    login: string
+  };
+  created_at: string;
+  state: string;
+  body: string | null;
 }

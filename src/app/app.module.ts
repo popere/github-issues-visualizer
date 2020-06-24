@@ -13,6 +13,7 @@ import {CommonModule} from '@angular/common';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from 'src/environments/environment';
 import {InfoRepoModule} from './info-repo/info-repo.module';
+import {IssuesRepoModule} from './issues-repo/issues-repo.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {InfoRepoModule} from './info-repo/info-repo.module';
     }),
     HttpClientModule,
     InputRepoModule,
-    InfoRepoModule
+    InfoRepoModule,
+    IssuesRepoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

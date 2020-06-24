@@ -1,0 +1,17 @@
+.errorMessage {
+  color: #f44336;
+  margin-left: 3px
+}
+.form-container {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  form {
+    margin: auto;
+    .mat-form-field {
+      width: 300px;
+    }
+  }
+}
