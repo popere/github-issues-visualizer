@@ -8,4 +8,9 @@ import {InfoRepo} from '../../models/info-repo.model';
 })
 export class InfoRepoComponent {
   @Input() infoRepo: InfoRepo;
+  @Input() error: boolean;
+
+  goToRepoLink(link: string) {
+    window.open(link, '_blank');
+  }
 }

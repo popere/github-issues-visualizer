@@ -1,7 +1,7 @@
 import { InfoRepoActions, InfoRepoActionTypes } from './actions';
 import {InfoRepoState} from './state.model';
 
-export const initialState: InfoRepoState = { infoRepo: null };
+export const initialState: InfoRepoState = { infoRepo: null, error: false };
 
 export function reducer(state = initialState, action: InfoRepoActions): InfoRepoState {
 
@@ -9,7 +9,19 @@ export function reducer(state = initialState, action: InfoRepoActions): InfoRepo
     case InfoRepoActionTypes.newInfoRepo:
       return {
         ...state,
+        error: false,
         infoRepo: Object.assign({}, action.payload)
+      };
+      case InfoRepoActionTypes.newInfoRepoError:
+      return {
+        ...state,
+        error: true,
+        infoRepo: null
+      };
+      case InfoRepoActionTypes.resetInfoRepoError:
+      return {
+        ...state,
+        error: false,
       };
 
     default:

@@ -6,6 +6,7 @@ import {InputRepo} from '../../models/input-repo.model';
 import {InputRepoState} from '../../state/state.model';
 import * as inputRepoSelectors from './../../state/selectors';
 import * as inputRepoAction from './../../state/actions';
+import * as infoRepoAction from '../../../info-repo/state/actions';
 
 @Component({
   selector: 'input-repo-shell',
@@ -19,6 +20,10 @@ export class InputRepoShellComponent {
   }
 
   newInputRepo(inputRepo: InputRepo) {
-    this._store.dispatch(new inputRepoAction.NewInputRepo(inputRepo));
+    if (inputRepo) {
+      this._store.dispatch(new inputRepoAction.NewInputRepo(inputRepo));
+    } else {
+      this._store.dispatch(new infoRepoAction.NewInfoRepoErrorReset());
+    }
   }
 }

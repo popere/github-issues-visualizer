@@ -1,20 +1,23 @@
-<div *ngIf="infoRepo">
+<div *ngIf="infoRepo && !error">
   <h3 class="info-title"> GITHUB REPOSITORY INFO</h3>
   <mat-card class="card">
     <mat-card-header>
-      <img alt="avatar image" mat-card-avatar src="/assets/github.png">
-      <mat-card-title>{{infoRepo.owner.login}}/{{infoRepo.name}}</mat-card-title>
+      <img class="clickable" (click)="goToRepoLink(infoRepo.html_url)"
+           alt="avatar image" mat-card-avatar src="/assets/github.png">
+      <mat-card-title class="clickable" (click)="goToRepoLink(infoRepo.html_url)">{{infoRepo.owner.login}}/{{infoRepo.name}}</mat-card-title>
       <mat-card-subtitle>{{infoRepo.created_at | date:'medium'}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <mat-chip color="primary">{{infoRepo.language}}</mat-chip>
+      <span class="badge badge-info">
+        {{infoRepo.language}}
+      </span>
       <ul>
-        <li *ngIf="!infoRepo.has_issues"> <b>This GitHub repository has no Issues!</b></li>
-        <li *ngIf="infoRepo.has_issues"> Number of issues: <b>{{infoRepo.open_issues}}</b></li>
+        <li class="no-issues" *ngIf="!infoRepo.has_issues"> <b>This GitHub repository has no Issues nor Pull Requests!</b></li>
+        <li *ngIf="infoRepo.has_issues"> Number of Issues and Pull Requests: <span class="badge badge-danger">{{infoRepo.open_issues}}</span></li>
       </ul>
     </mat-card-content>
-    <mat-card-actions>
-      <a class="link-github" target="_blank" rel="noopener noreferrer" [href]="infoRepo.html_url">GITHUB LINK</a>
-    </mat-card-actions>
   </mat-card>
+</div>
+<div *ngIf="error" class="center error-container">
+  <h3 class="error-loading"> Error getting repository info.</h3>
 </div>

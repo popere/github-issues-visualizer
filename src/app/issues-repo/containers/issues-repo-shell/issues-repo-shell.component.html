@@ -1,2 +1,8 @@
-<issues-repo [issuesRepo]="issuesRepo$ | async" >
+<issues-repo
+  [infoRepo]="infoRepo$ | async"
+  [issuesRepo]="issuesRepo$ | async"
+  [pageIssues]="pageIssues$ | async"
+  [perPageIssues]="perPageIssues$ | async"
+  [error]="errorIssues$ | async"
+  (newPageToLoad)="newPageToLoad($event)">
 </issues-repo>

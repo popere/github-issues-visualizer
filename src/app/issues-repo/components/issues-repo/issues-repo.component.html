@@ -1,34 +1,40 @@
-<div *ngIf="issuesRepo.length > 0">
+<div *ngIf="infoRepo && issuesRepo">
   <h3 class="issues-title"> ISSUES and PULL REQUESTS</h3>
   <mat-paginator class="paginator"
-                 [length]="100"
-                 [pageSize]="10"
-                 [pageSizeOptions]="[5, 10, 25, 100]">
+                 [length]="infoRepo.open_issues"
+                 [pageIndex]="pageIssues"
+                 [pageSize]="perPageIssues"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 (page)="pageChanged($event)">
   </mat-paginator>
-  <mat-card class="card" *ngFor="let issue of issuesRepo">
-    <mat-card-header>
-      <img alt="avatar image" mat-card-avatar src="/assets/logo.png">
-      <mat-card-title>{{issue.title}}</mat-card-title>
-      <mat-card-subtitle>{{issue.created_at | date:'medium'}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <ul>
-        <li> Type: <b>{{issue['pull_request'] ? 'Pull request' : 'Issue'}}</b></li>
-        <li> Creator username: <b>{{issue.user.login}}</b></li>
-      </ul>
-      <mat-accordion *ngIf="issue.body">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Details
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p>{{issue.body}}</p>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </mat-card-content>
-    <mat-card-actions>
-      <a class="link-github" target="_blank" rel="noopener noreferrer" [href]="issue.html_url">GITHUB LINK</a>
-    </mat-card-actions>
-  </mat-card>
+  <div *ngIf="error" class="center error-container">
+    <h3 class="error-loading"> Error getting Issues.</h3>
+  </div>
+  <div *ngIf="!error">
+    <mat-card class="card" *ngFor="let issue of issuesRepo">
+      <mat-card-header>
+        <img class="clickable" (click)="goToIssueLink(issue.html_url)" alt="avatar image" mat-card-avatar src="/assets/logo.png">
+        <mat-card-title class="clickable" (click)="goToIssueLink(issue.html_url)">{{issue.title}}</mat-card-title>
+        <mat-card-subtitle>{{issue.created_at | date:'medium'}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li> Type: <b>{{issue['pull_request'] ? 'Pull request' : 'Issue'}}</b></li>
+          <li> Creator username: <b class="clickable" (click)="goToIssueLink(issue.user['html_url'])">{{issue.user.login}}</b></li>
+        </ul>
+        <mat-accordion *ngIf="issue.body">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Details
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{issue.body}}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
 </div>
+

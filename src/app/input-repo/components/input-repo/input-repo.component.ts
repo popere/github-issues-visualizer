@@ -23,6 +23,7 @@ export class InputRepoComponent {
       this.newInputRepo.emit(inputRepo);
       return null;
     } else {
+      this.newInputRepo.emit(null);
       return {error: 'Please enter a correct repository url from GitHub'};
     }
   };

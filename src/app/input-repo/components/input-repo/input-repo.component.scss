@@ -1,7 +1,11 @@
 .errorMessage {
-  color: #f44336;
-  margin-left: 3px
+  margin: auto;
+  width: 300px;
+  background-color: #f44336;
+  border-radius: 0;
+  color: #fff;
 }
+
 .form-container {
   display: flex;
   margin-top: 20px;
@@ -14,4 +18,9 @@
       width: 300px;
     }
   }
+}
+
+.center{
+  justify-content: center;
+  text-align: center;
 }

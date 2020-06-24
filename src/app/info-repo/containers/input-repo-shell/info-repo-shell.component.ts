@@ -12,8 +12,10 @@ import {InfoRepoState} from '../../state/state.model';
 })
 export class InfoRepoShellComponent {
   infoRepo$: Observable<InfoRepo>;
+  infoRepoError$: Observable<boolean>;
 
   constructor(private _store: Store<InfoRepoState>) {
     this.infoRepo$ = _store.pipe(select(infoRepoSelectors.getInfoRepo));
+    this.infoRepoError$ = _store.pipe(select(infoRepoSelectors.getInfoRepoError));
   }
 }

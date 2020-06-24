@@ -2,10 +2,51 @@
   text-align: center;
   color: #FFF;
 }
+.info-title-error {
+  text-align: center;
+  color: #f44336;
+}
 .card {
   margin: 10px 20px;
 }
 
 .link-github {
   margin-left: 20px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+.badge {
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.badge-danger {
+  background-color: #f44336;
+}
+.badge-info {
+  background-color: #4CAF50;
+}
+.no-issues {
+  color: #4CAF50;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+}
+
+.error-loading {
+  margin: auto;
+  width: 300px;
+  background-color: #f44336;
+  border-radius: 0;
+  color: #fff;
+}
+.error-container {
+  margin-top: 10px;
 }

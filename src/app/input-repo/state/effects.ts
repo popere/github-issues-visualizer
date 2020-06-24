@@ -13,16 +13,13 @@ export class InputRepoEffects {
   constructor( private _actions$: Actions, private _gitHubApiService: GitHubApiService ) {
   }
 
-
   loadGitHubInfoRepo$ = createEffect(() =>  this._actions$.pipe(
     ofType(inputRepoActions.InputRepoActionTypes.newInputRepo),
     mergeMap((action: NewInputRepo) => {
-        console.log('action in effect', action);
-        return  this._gitHubApiService.searchRepoInfo(action.payload.username, action.payload.repositoryName)
+        return this._gitHubApiService.searchRepoInfo(action.payload.username, action.payload.repositoryName)
           .pipe(
             map(infoRepo => ( new infoRepoActions.NewInfoRepo(infoRepo))),
-            //TODO gestion de errores
-            catchError(() => of({type: '[GitHub Repo] Repo LoadedError'}))
+            catchError(() => of({type: infoRepoActions.InfoRepoActionTypes.newInfoRepoError}))
           );
       }
     )
