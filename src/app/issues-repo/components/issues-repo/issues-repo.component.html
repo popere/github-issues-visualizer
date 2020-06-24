@@ -10,7 +10,7 @@
   <div *ngIf="error" class="center error-container">
     <h3 class="error-loading"> Error getting Issues.</h3>
   </div>
-  <div *ngIf="!error">
+  <div id="issues-cards" *ngIf="!error">
     <mat-card class="card" *ngFor="let issue of issuesRepo">
       <mat-card-header>
         <img class="clickable" (click)="goToIssueLink(issue.html_url)" alt="avatar image" mat-card-avatar src="/assets/logo.png">

@@ -5,14 +5,14 @@ import {InputRepo} from '../../models/github.model';
   providedIn: 'root'
 })
 export class UtilsService {
-  regexpGitHub = /https:\/\/github\.com\/([^/]+)\/([^/]+)(\/.+)*/i;
+  private _regexpGitHub = /https:\/\/github\.com\/([^/]+)\/([^/]+)(\/.+)*/i;
 
   constructor() {
   }
 
   getGitHubURLInput(url: string): InputRepo | null {
-    if (this.regexpGitHub.test(url)) {
-      const exec = this.regexpGitHub.exec(url);
+    if (this._regexpGitHub.test(url)) {
+      const exec = this._regexpGitHub.exec(url);
       if (exec) {
         return {
           username: exec[1],

@@ -32,5 +32,4 @@ export class InputRepoComponent {
     githubUrl: new FormControl('', (control) => this._validatorUrl(control)),
   });
 
-
 }

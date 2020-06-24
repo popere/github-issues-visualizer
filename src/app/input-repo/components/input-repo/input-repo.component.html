@@ -2,12 +2,12 @@
   <form [formGroup]="form">
     <mat-form-field>
       <mat-label>GitHub repository URL</mat-label>
-      <input formControlName="githubUrl" type="url" matInput placeholder="https://github.com/exampleUser/exampleProject" required>
+      <input formControlName="githubUrl" type="url" matInput placeholder="https://github.com/user/repoName" required>
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
     <div class="center">
       <h3 *ngIf="(form.controls.githubUrl.dirty || form.controls.githubUrl.touched) && form.controls.githubUrl.invalid"
-        class="errorMessage">Please enter a correct GitHub repository</h3>
+        class="errorMessage">Please enter a correct GitHub repository.</h3>
     </div>
   </form>
 </div>

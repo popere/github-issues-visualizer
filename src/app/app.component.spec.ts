@@ -30,6 +30,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('github-issues-visualizer app is running!');
+    expect(compiled.querySelector('h1').innerText).toContain('GitHub Issues Visualizer');
   });
 });
