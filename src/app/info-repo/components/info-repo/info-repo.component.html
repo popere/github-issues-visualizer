@@ -2,9 +2,9 @@
   <h3 class="info-title"> GITHUB REPOSITORY INFO</h3>
   <mat-card class="card">
     <mat-card-header>
-      <img mat-card-avatar src="/assets/github.png">
+      <img alt="avatar image" mat-card-avatar src="/assets/github.png">
       <mat-card-title>{{infoRepo.owner.login}}/{{infoRepo.name}}</mat-card-title>
-      <mat-card-subtitle>{{infoRepo.created_at | date:'longDate'}}</mat-card-subtitle>
+      <mat-card-subtitle>{{infoRepo.created_at | date:'medium'}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <mat-chip color="primary">{{infoRepo.language}}</mat-chip>

@@ -9,6 +9,7 @@ import {IssuesRepoComponent} from './components/issues-repo/issues-repo.componen
 import {IssuesRepoEffects} from './state/effects';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     EffectsModule.forFeature([IssuesRepoEffects]),
     MatCardModule,
     MatPaginatorModule,
+    MatExpansionModule,
   ],
   exports: [
     IssuesRepoShellComponent

@@ -15,6 +15,7 @@ export class IssuesRepoShellComponent {
 
   constructor(private _store: Store<IssuesRepoState>) {
     this.issuesRepo$ = _store.pipe(select(issuesRepoSelectors.getIssuesRepo));
+    //this.issuesRepo$ = _store.pipe(select(issuesRepoSelectors.getPaginationRepo));
   }
 
 

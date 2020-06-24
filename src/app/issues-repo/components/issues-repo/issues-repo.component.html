@@ -1,5 +1,5 @@
 <div *ngIf="issuesRepo.length > 0">
-  <h3 class="issues-title"> ISSUES</h3>
+  <h3 class="issues-title"> ISSUES and PULL REQUESTS</h3>
   <mat-paginator class="paginator"
                  [length]="100"
                  [pageSize]="10"
@@ -7,18 +7,25 @@
   </mat-paginator>
   <mat-card class="card" *ngFor="let issue of issuesRepo">
     <mat-card-header>
-      <img mat-card-avatar src="/assets/logo.png">
+      <img alt="avatar image" mat-card-avatar src="/assets/logo.png">
       <mat-card-title>{{issue.title}}</mat-card-title>
-      <mat-card-subtitle>{{issue.created_at | date:'longDate'}}</mat-card-subtitle>
+      <mat-card-subtitle>{{issue.created_at | date:'medium'}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <ul>
-        <li> State: <b>{{issue.state}}</b></li>
+        <li> Type: <b>{{issue['pull_request'] ? 'Pull request' : 'Issue'}}</b></li>
         <li> Creator username: <b>{{issue.user.login}}</b></li>
       </ul>
-      <!--<p *ngIf="issue.body">
-        {{issue.body}}
-      </p>-->
+      <mat-accordion *ngIf="issue.body">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Details
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{issue.body}}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
     </mat-card-content>
     <mat-card-actions>
       <a class="link-github" target="_blank" rel="noopener noreferrer" [href]="issue.html_url">GITHUB LINK</a>
