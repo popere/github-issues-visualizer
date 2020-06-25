@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "variables.scss";
 
-body { margin: 10px; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: $primary}
+body { margin: 10px; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: $background-grey}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
-  -webkit-box-shadow: 0 0 0 30px $primary inset !important;
+  -webkit-box-shadow: 0 0 0 30px $background-grey inset !important;
 }
