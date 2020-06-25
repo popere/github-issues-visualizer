@@ -28,8 +28,11 @@ export class IssuesRepoShellComponent {
     this.errorIssues$ = _store.pipe(select(issuesRepoSelectors.getIssuesRepoError));
   }
 
+  /**
+   * Method to dispatch an action to load a new issue page
+   * @param params pagination and repository information
+   */
   newPageToLoad(params: {repo_name: string, username: string, page: number, per_page: number}) {
-    console.log(params);
     this._store.dispatch(new issuesRepoAction.NewIssuesPageToLoad(params));
   }
 }

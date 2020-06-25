@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {InputRepo} from '../../models/github.model';
+import {InputRepo} from '../../models/github-api.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,11 @@ export class UtilsService {
   constructor() {
   }
 
+  /**
+   * Method to get repository and username form a GitHub URL
+   * It returns null if format is not correct
+   * @param url link to the GitHub repository
+   */
   getGitHubURLInput(url: string): InputRepo | null {
     if (this._regexpGitHub.test(url)) {
       const exec = this._regexpGitHub.exec(url);

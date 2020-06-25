@@ -19,6 +19,10 @@ export class InputRepoShellComponent {
     this.inputRepo$ = _store.pipe(select(inputRepoSelectors.getInputRepo));
   }
 
+  /**
+   * Method to dispatch actions
+   * @param inputRepo repository name and username information
+   */
   newInputRepo(inputRepo: InputRepo) {
     if (inputRepo) {
       this._store.dispatch(new inputRepoAction.NewInputRepo(inputRepo));

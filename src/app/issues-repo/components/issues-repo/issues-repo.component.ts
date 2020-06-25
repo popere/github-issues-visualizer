@@ -20,9 +20,11 @@ export class IssuesRepoComponent {
   constructor() {
   }
 
-
+  /**
+   * Method to get new issues from new page
+   * @param pageEvent pagination changed attributes
+   */
   pageChanged(pageEvent: PageEvent) {
-    console.log(pageEvent);
     this.newPageToLoad.emit({
       repo_name: this.infoRepo.name,
       username: this.infoRepo.owner.login,
@@ -31,6 +33,10 @@ export class IssuesRepoComponent {
     });
   }
 
+  /**
+   * Method to open an issue in a new blank tab
+   * @param link url from the GitHub issue
+   */
   goToIssueLink(link: string) {
     window.open(link, '_blank');
   }
