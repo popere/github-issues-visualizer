@@ -2,10 +2,16 @@
   "name": "github-issues-visualizer",
   "author": "popere",
   "version": "0.0.0",
+  "engines": {
+    "node": "12.18.1",
+    "npm": ">=6"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "heroku-prebuild": "npm i -g @angular/cli@9.1.9",
+    "heroku-postbuild": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -26,6 +32,7 @@
     "@ngrx/effects": "^9.2.0",
     "@ngrx/store": "^9.2.0",
     "@ngrx/store-devtools": "^9.2.0",
+    "express": "^4.17.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
