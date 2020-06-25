@@ -1,5 +1,6 @@
 {
   "name": "github-issues-visualizer",
+  "author": "popere",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -21,6 +22,7 @@
     "@angular/platform-browser": "~9.1.11",
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
+    "@angular/service-worker": "~9.1.11",
     "@ngrx/effects": "^9.2.0",
     "@ngrx/store": "^9.2.0",
     "@ngrx/store-devtools": "^9.2.0",

@@ -1,9 +1,10 @@
+@import '../../../../variables';
 .errorMessage {
   margin: auto;
   width: 300px;
-  background-color: #f44336;
+  background-color: $red;
   border-radius: 0;
-  color: #fff;
+  color: $white;
 }
 
 .form-container {

@@ -14,6 +14,7 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from 'src/environments/environment';
 import {InfoRepoModule} from './info-repo/info-repo.module';
 import {IssuesRepoModule} from './issues-repo/issues-repo.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {IssuesRepoModule} from './issues-repo/issues-repo.module';
     HttpClientModule,
     InputRepoModule,
     InfoRepoModule,
-    IssuesRepoModule
+    IssuesRepoModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

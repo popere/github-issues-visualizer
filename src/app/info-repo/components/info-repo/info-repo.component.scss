@@ -1,10 +1,11 @@
+@import '../../../../variables';
 .info-title {
   text-align: center;
-  color: #FFF;
+  color: $white;
 }
 .info-title-error {
   text-align: center;
-  color: #f44336;
+  color: $red;
 }
 .card {
   margin: 10px 20px;
@@ -19,17 +20,17 @@
 }
 .badge {
   border-radius: 50%;
-  color: #fff;
+  color: $white;
   display: inline-block;
   padding-left: 8px;
   padding-right: 8px;
   text-align: center;
 }
 .badge-danger {
-  background-color: #f44336;
+  background-color: $red;
 }
 .badge-info {
-  background-color: #4CAF50;
+  background-color: $green;
 }
 .no-issues {
   color: #4CAF50;
@@ -43,9 +44,9 @@
 .error-loading {
   margin: auto;
   width: 300px;
-  background-color: #f44336;
+  background-color: $red;
   border-radius: 0;
-  color: #fff;
+  color: $white;
 }
 .error-container {
   margin-top: 10px;
