@@ -1,6 +1,31 @@
 # GitHub Issues Visualizer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+<img alt="GitHub Issues Visualizer Logotype" src="./src/assets/logo.png" width="75">
+
+Angular PWA SPA to visualize issues from GitHub via its API REST
+
+Demo: https://github-issues-visualizer.herokuapp.com/
+
+Features:
+- Search repository information typing the GitHub URL
+- Consult paginated list of issues from that repository
+- Limited offline capabilities thanks to PWA technology 
+
+Technologies used:
+- [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9
+- [Angular 9](https://angular.io/)
+- [Angular Material](https://material.angular.io/) UI
+- [RxJs](https://angular.io/guide/rx-library) Reactive behaviours
+- [NgRx](https://ngrx.io/) State Manager
+- [Karma/Jasmine](https://angular.io/guide/testing) Unitary Tests
+- [Protractor](https://angular.io/guide/testing) E2E Tests
+- [PWA](https://angular.io/guide/service-worker-getting-started) Offline Capabilities
+- [Heroku](https://www.heroku.com/) CI/CD Online
+- [Express](https://github.com/expressjs/express) Web Application Framework
+- [nvm](https://github.com/nvm-sh/nvm) Node Version Manager
+
+## Install modules
+Run `npm install` to install necessary node-modules
 
 ## Development server
 
