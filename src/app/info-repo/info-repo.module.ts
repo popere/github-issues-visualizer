@@ -5,14 +5,12 @@ import {CommonModule} from '@angular/common';
 import {InfoRepoShellComponent} from './containers/input-repo-shell/info-repo-shell.component';
 import {InfoRepoComponent} from './components/info-repo/info-repo.component';
 import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   imports: [
     CommonModule,
     StoreModule.forFeature('infoRepo', reducer),
-    MatCardModule,
-    MatChipsModule
+    MatCardModule
   ],
   exports: [
     InfoRepoShellComponent

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './state/reducer';
-
 import {EffectsModule} from '@ngrx/effects';
 import {CommonModule} from '@angular/common';
 import {IssuesRepoShellComponent} from './containers/issues-repo-shell/issues-repo-shell.component';
