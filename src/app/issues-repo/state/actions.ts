@@ -2,9 +2,9 @@ import { Action } from '@ngrx/store';
 import {IssueRepo} from '../models/issue-repo.model';
 
 export enum IssuesRepoActionTypes {
-  newIssuesPageToLoad = '[IssuesRepo] New Page To Load',
-  newIssuesPageLoaded = '[IssuesRepo] New Page Issues Loaded',
-  newIssuesPageErrorLoading = '[IssuesRepo] New Page Issues Error',
+  newIssuesPageToLoad = '[IssuesRepo] New Issues Page To Load',
+  newIssuesPageLoaded = '[IssuesRepo] New Issues Page Loaded',
+  newIssuesPageErrorLoading = '[IssuesRepo] Error Getting Issues Page',
   noIssuesToLoad = '[IssuesRepo] No Issues To Load'
 }
 

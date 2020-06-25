@@ -2,9 +2,9 @@ import { Action } from '@ngrx/store';
 import {InfoRepo} from '../models/info-repo.model';
 
 export enum InfoRepoActionTypes {
-  newInfoRepo = '[InfoRepo] NewRepo',
-  newInfoRepoError = '[InfoRepo] NewRepoError',
-  resetInfoRepoError = '[InfoRepo] RepoError Reset'
+  newInfoRepo = '[InfoRepo] New Repo Information',
+  newInfoRepoError = '[InfoRepo] Error Getting New Repo Information',
+  resetInfoRepoError = '[InfoRepo] Reset Error'
 }
 
 export class NewInfoRepo implements Action {
