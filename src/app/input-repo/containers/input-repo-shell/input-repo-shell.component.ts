@@ -3,10 +3,10 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import {InputRepo} from '../../models/input-repo.model';
-import {InputRepoState} from '../../state/state.model';
-import * as inputRepoSelectors from './../../state/selectors';
-import * as inputRepoAction from './../../state/actions';
-import * as infoRepoAction from '../../../info-repo/state/actions';
+import {InputRepoState} from '../../models/state.model';
+import * as inputRepoSelectors from '../../selectors/selectors';
+import * as inputRepoAction from '../../actions/actions';
+import * as infoRepoAction from '../../../info-repo/actions/actions';
 
 @Component({
   selector: 'input-repo-shell',

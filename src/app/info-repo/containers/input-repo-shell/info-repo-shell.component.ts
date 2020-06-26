@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import * as infoRepoSelectors from './../../state/selectors';
+import * as infoRepoSelectors from '../../selectors/selectors';
 import {InfoRepo} from '../../models/info-repo.model';
-import {InfoRepoState} from '../../state/state.model';
+import {InfoRepoState} from '../../models/state.model';
 
 @Component({
   selector: 'info-repo-shell',

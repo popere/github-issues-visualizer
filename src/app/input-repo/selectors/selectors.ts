@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {InputRepoState} from './state.model';
+import {InputRepoState} from '../models/state.model';
 
 const getInputRepoFeatureState = createFeatureSelector<InputRepoState>('inputRepo');
 

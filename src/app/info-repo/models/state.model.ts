@@ -1,4 +1,4 @@
-import {InfoRepo} from '../models/info-repo.model';
+import {InfoRepo} from './info-repo.model';
 
 export interface InfoRepoState {
   infoRepo: InfoRepo;

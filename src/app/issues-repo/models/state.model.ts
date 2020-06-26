@@ -1,4 +1,4 @@
-import {IssueRepo} from '../models/issue-repo.model';
+import {IssueRepo} from './issue-repo.model';
 
 export interface IssuesRepoState {
   issuesRepo: IssueRepo[];

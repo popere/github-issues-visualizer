@@ -1,5 +1,5 @@
-import { InputRepoActions, InputRepoActionTypes } from './actions';
-import {InputRepoState} from './state.model';
+import { InputRepoActions, InputRepoActionTypes } from '../actions/actions';
+import {InputRepoState} from '../models/state.model';
 
 export const initialState: InputRepoState = { inputRepo: null };
 

@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
-import * as inputRepoActions from './actions';
-import * as infoRepoActions from '../../info-repo/state/actions';
+import * as inputRepoActions from '../actions/actions';
+import * as infoRepoActions from '../../info-repo/actions/actions';
 import {GitHubApiService} from '../../shared/services/github-api/github-api.service';
-import {NewInputRepo} from './actions';
+import {NewInputRepo} from '../actions/actions';
 
 @Injectable()
 export class InputRepoEffects {

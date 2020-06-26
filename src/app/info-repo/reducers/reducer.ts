@@ -1,5 +1,5 @@
-import { InfoRepoActions, InfoRepoActionTypes } from './actions';
-import {InfoRepoState} from './state.model';
+import { InfoRepoActions, InfoRepoActionTypes } from '../actions/actions';
+import {InfoRepoState} from '../models/state.model';
 
 export const initialState: InfoRepoState = { infoRepo: null, error: false };
 

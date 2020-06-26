@@ -1,5 +1,5 @@
-import { IssuesRepoActions, IssuesRepoActionTypes } from './actions';
-import {IssuesRepoState} from './state.model';
+import { IssuesRepoActions, IssuesRepoActionTypes } from '../actions/actions';
+import {IssuesRepoState} from '../models/state.model';
 
 export const initialState: IssuesRepoState = { issuesRepo: [], page: 0, per_page: 10, error: false };
 

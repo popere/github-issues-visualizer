@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import {IssuesRepoState} from '../../state/state.model';
+import {IssuesRepoState} from '../../models/state.model';
 import {IssueRepo} from '../../models/issue-repo.model';
-import * as issuesRepoSelectors from './../../state/selectors';
-import * as issuesRepoAction from './../../state/actions';
-import * as infoRepoSelectors from '../../../info-repo/state/selectors';
+import * as issuesRepoSelectors from '../../selectors/selectors';
+import * as issuesRepoAction from '../../actions/actions';
+import * as infoRepoSelectors from '../../../info-repo/selectors/selectors';
 import {InfoRepo} from '../../../info-repo/models/info-repo.model';
 
 @Component({

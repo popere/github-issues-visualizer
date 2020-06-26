@@ -1,4 +1,4 @@
-import {InputRepo} from '../models/input-repo.model';
+import {InputRepo} from './input-repo.model';
 
 export interface InputRepoState {
   inputRepo: InputRepo;
